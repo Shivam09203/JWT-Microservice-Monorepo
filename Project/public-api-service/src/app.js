@@ -23,4 +23,5 @@ app.get('/', (req, res) => {
 
 // Start Server
 const PORT = process.env.PORT || 3001;
-app.listen(PORT, () => console.log(`Public API Microservice running on port ${PORT}`));
+//app.listen(PORT, () => console.log(`Public API Microservice running on port ${PORT}`));
+module.exports = app; 
