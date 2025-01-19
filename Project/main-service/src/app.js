@@ -4,6 +4,7 @@ const connectDB = require('./database');
 const authRoutes = require('./routes/authRoutes');
 const candidateRoutes = require('./routes/candidateRoutes');
 const apiKeyRoutes = require('./routes/apiKeyRoutes');
+const protectedRoute = require('./routes/protectedRoute');
 
 const app = express();
 
@@ -17,6 +18,7 @@ connectDB(process.env.MONGO_URI);
 app.use('/api', authRoutes);
 app.use('/api', candidateRoutes);
 app.use('/api', apiKeyRoutes);
+app.use('/api', protectedRoute);
 
 // Default Route
 app.get('/', (req, res) => {
